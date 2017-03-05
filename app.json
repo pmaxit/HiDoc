@@ -1,0 +1,21 @@
+{
+  "name": "Hi Doc",
+  "description": "A personal assistant to diagnose medical disease",
+  "image": "heroku/python",
+  "repository": "https://github.com/pmaxit/HiDoc",
+  "keywords": ["python", "flask", "wit", "bot", "facebook", "Messenger","Medical","Diagnosis" ],
+  "env": {
+    "WIT_TOKEN": {
+      "description": "Server Access Token from wit.ai (see your wit app settings).",
+      "required": true
+    },
+    "FB_PAGE_TOKEN": {
+      "description": "Facebook Page Token from https://developers.facebook.com/apps/",
+      "required": true
+    },
+    "FB_VERIFY_TOKEN": {
+      "description": "Facebook Verfication Token. Please make something up.",
+      "required": true
+    }
+  }
+}

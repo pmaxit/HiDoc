@@ -13,7 +13,7 @@ heroku create
 git push heroku master
 ```
 
- ## Further Configuration
+## Further Configuration
   * Setup your Facebook Webhook callback to the heroku app you deployed.
   * Set the following in your HEroku Config Variables:
  
@@ -22,7 +22,7 @@ git push heroku master
  FB_PAGE_TOKEN = "your facebook page token"
  FB_VERIFY_TOKEN = "your webhook verification token"
 ```
- ## Documentation
+## Documentation
  
  Within the repository you'll find the following directories and files:
  

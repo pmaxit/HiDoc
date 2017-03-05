@@ -1,5 +1,5 @@
 Werkzeug==0.11.4
-wit==3.4.0
+wit==4.2.0
 requests==2.9.1
 ./pywapi-0.3.8
 pymessenger==0.0.3.1

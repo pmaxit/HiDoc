@@ -27,7 +27,7 @@ git push heroku master
  Within the repository you'll find the following directories and files:
  
  ```
- Wit-Facebook-Weather-Py
+       HiDoc
          ├── setup needed as Heroku pip doesn't find this.
          ├── app.json
          ├── Procfile

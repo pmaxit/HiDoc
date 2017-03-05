@@ -91,6 +91,7 @@ def hello():
     if request.method == 'POST':
         output = request.json
         event = output['entry'][0]['messaging']
+        print(event)
         for x in event:
             if (x.get('message') and x['message'].get('text')):
                 message = x['message']['text']

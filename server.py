@@ -40,11 +40,12 @@ def send(request, response):
     fb_id = request['session_id']
     text = response['text']
     # send message
-    
+    print('sending text ', text)
     bot.send_text_message(fb_id, text)
 
 # Calls pywapi to fetch weather info in realtime
 def fetch_diagnosis(request):
+    print(request)
     context = request['context']
     entities = request['entities']
     lst = []
@@ -91,6 +92,7 @@ def hello():
     if request.method == 'POST':
         output = request.json
         event = output['entry'][0]['messaging']
+        print(event)
         for x in event:
             if (x.get('message') and x['message'].get('text')):
                 message = x['message']['text']

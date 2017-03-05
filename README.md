@@ -1,6 +1,6 @@
 # Hi Doc, Chatbot
 
-Flask base python chat bot designed to make diagnosing illness easier. This conversational bot is named "Chappie" and comes with in-build state-of-art machine learning algorithms to detect diagnosis from symptoms. It also allows users to contact doctors, book appointments, and ask questions with the chatbot intended to speed up this process.
+Flask base python chat bot designed to make diagnosing illness easier. This conversational bot is named "Chappie" and comes with in-build state-of-art machine learning algorithms to detect diagnosis from symptoms. It also allows users to contact doctors, book appointments, and ask questions with the chatbot intended to speed up this process [ WORK-IN-PROGRESS ]
 
 
 ## Initial installation

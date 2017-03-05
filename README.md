@@ -33,5 +33,8 @@ git push heroku master
          ├── Procfile
          └── README.md
          └── server.py
+         └── basenet.py
+         └── data
+            └── hmm.csv   
          └── requirements.txt
  ```

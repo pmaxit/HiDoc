@@ -40,6 +40,7 @@ def send(request, response):
     fb_id = request['session_id']
     text = response['text']
     # send message
+    print('session_id', fb_id)
     print('sending text ', text)
     bot.send_text_message(fb_id, text)
 

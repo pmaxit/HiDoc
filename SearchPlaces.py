@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 from googleplaces import GooglePlaces, types, lang
-from pymessenger import Element, Button
+from pymessenger import Element
 
 YOUR_API_KEY = 'AIzaSyCsPJ6rmsB8th93DPMszE2tXrIpgh_tttM'
 

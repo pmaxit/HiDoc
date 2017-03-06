@@ -6,6 +6,7 @@ import requests
 import os
 
 from bayesnet import BayesNet
+from SearchPlaces import Search
 
 # Insert Wit access token here. Don't forget to train the Wit bot.
 access_token = os.environ.get('WIT_TOKEN')
@@ -15,6 +16,7 @@ TOKEN = os.environ.get('FB_PAGE_TOKEN')
 
 # Set up bot and flask app
 bot = Bot(TOKEN)
+googleSearch = Search()
 app = Flask(__name__)
 
 # Global variables to ensure pymessenger bot waits for wit.ai to respond.
@@ -40,9 +42,31 @@ def send(request, response):
     fb_id = request['session_id']
     text = response['text']
     # send message
-    print('session_id', fb_id)
-    print('sending text ', text)
+    #print('session_id', fb_id)
+    #print('sending text ', text)
     bot.send_text_message(fb_id, text)
+    
+
+def fetch_hospitals(request):
+    context = request['context']
+    entities= request['entities']
+    fb_id   = request['session_id']
+
+    loc = first_entity_value(entities,'location')
+    if loc:
+        print("FOUND LOCATION ")
+        context['hospitals'] = True
+        if context.get('missingLocation') is not None:
+            del context['missingLocation']
+
+        elements = googleSearch.search(loc)
+        bot.send_generic_message(fb_id, elements)
+    else:
+        context['missingLocation']=True
+        if context.get('hospitals') is not None:
+            del context['hospitals']
+        
+    return context
 
 # Calls pywapi to fetch weather info in realtime
 def fetch_diagnosis(request):
@@ -77,7 +101,8 @@ def fetch_weather(session_id, context):
 actions = {
     'send': send,
     'fetch_diagnosis': fetch_diagnosis,
-    'docbot': fetch_diagnosis
+    'docbot': fetch_diagnosis,
+    'fetch_hospitals':fetch_hospitals
 }
 
 client = Wit(access_token, actions)

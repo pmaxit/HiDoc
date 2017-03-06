@@ -7,4 +7,5 @@ Jinja2==2.8
 itsdangerous==0.24
 Flask==0.10.1
 pandas
+python-google-places
 
